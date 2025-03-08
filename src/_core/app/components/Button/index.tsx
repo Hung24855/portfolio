@@ -8,6 +8,7 @@ interface AppButtonProps {
     type?: "button" | "submit" | "reset";
     isLoading?: boolean;
     disabled?: boolean;
+    [key: string]: any;
 }
 
 export default function AppButton({
@@ -17,7 +18,8 @@ export default function AppButton({
     block = false,
     type = "button",
     isLoading = false,
-    disabled = false
+    disabled = false,
+    ...rest
 }: AppButtonProps) {
     return (
         <button
@@ -31,6 +33,7 @@ export default function AppButton({
                 isLoading && "opacity-50 cursor-not-allowed",
                 disabled && "opacity-50 cursor-not-allowed"
             )}
+            {...rest}
         >
             {isLoading && (
                 <div

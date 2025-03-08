@@ -17,7 +17,7 @@
         font-size: 1.125rem;
         font-weight: 600;
         line-height: 34px;
-        @apply md:text-xl;
+        @apply tab:text-xl;
     }
 
     .nav-link-item {

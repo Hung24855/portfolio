@@ -10,6 +10,10 @@ img.image {
     @apply flex justify-center;
 }
 
+.tag {
+    @apply px-3 py-1 rounded-full bg-[#1e2a5a] text-sm text-white/80 hover:bg-emerald-500/20 hover:text-emerald-400 transition-colors duration-200
+}
+
 .box {
     display: flex;
     align-items: center;

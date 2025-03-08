@@ -60,7 +60,7 @@ const Header = () => {
             style={{ height: HEADER_HEIGHT }}
             className={clsx(
                 "fixed z-30 inset-0 transition-all duration-150",
-                isBgNav ? "bg-[#240B39]" : "bg-transparent"
+                isBgNav ? "bg-[#240B39]/80 backdrop-blur-md" : "bg-transparent"
             )}
         >
             <div className="flex justify-center responsive-layout h-full text-white">

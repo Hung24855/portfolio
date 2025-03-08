@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "../style/globals.css";
+import "react-multi-carousel/lib/styles.css";
+import AppProvider from "@/_core/app/components/AppProvider";
 
 const font = Sora({ weight: ["100", "200", "300", "400", "500", "600", "700", "800"], subsets: ["latin"] });
 
@@ -16,7 +18,13 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={font.className}>{children}</body>
+            <head>
+                <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></link>
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            </head>
+            <body className={font.className}>
+                <AppProvider>{children}</AppProvider>
+            </body>
         </html>
     );
 }
