@@ -1,0 +1,21 @@
+@import "./custom.css";
+@import "./font.css";
+@import "./scrollbar.css";
+@import "./theme.css";
+@import "./tw-base.css";
+@import "./tw-components.css";
+@import "./tw-utilities.css";
+@import "./checkbox.css";
+
+:root {
+    --scrollbar-width: calc(100vw - 100%);
+    font-size: 16px;
+    letter-spacing: 0.1px;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media all and (min-width: 640px) {
+    :root {
+        font-size: 16px;
+    }
+}

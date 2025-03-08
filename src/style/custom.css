@@ -1,0 +1,62 @@
+.responsive-layout {
+    @apply tab:max-w-screen-tabx lap:max-w-screen-lapx desk:max-w-screen-deskx mx-auto px-2 tab:px-8;
+}
+
+figure.image {
+    @apply flex justify-center !w-full;
+} 
+
+img.image {
+    @apply flex justify-center;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: 16px;
+    background: #0e1538;
+    z-index: 1;
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 200%;
+    background-image: linear-gradient(#00ccff, #ee48ee);
+    top: 0;
+    transform: rotate(30deg);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0; /* Ẩn ban đầu */
+}
+
+@keyframes animate {
+    0% {
+        left: -100px;
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 1;
+    }
+}
+
+.box:hover::after {
+    animation: animate 1s forwards;
+    opacity: 1;
+}
+
+.box img {
+    z-index: 1;
+}

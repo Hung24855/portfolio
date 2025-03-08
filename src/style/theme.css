@@ -1,0 +1,20 @@
+:root {
+    --primary: #6ee7b7;
+    --primary-light: #2470aa;
+    --secondary: #dee0e1;
+    --background: #0f0715;
+    --block: #ffffff;
+    --primary-typo: #1b1b1b;
+    --secondary-typo: #295779;
+    --placeholder: #626c90;
+    --icon: #292D32
+}
+
+:root.dark {
+    --primary: #155e94;
+    --secondary: #ffce56;
+    --background: #0b0b0b;
+    --block: #262626;
+    --primary-typo: #ffffff;
+    --secondary-typo: #ffffff;
+}
