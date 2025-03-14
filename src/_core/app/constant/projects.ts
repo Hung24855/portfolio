@@ -38,7 +38,6 @@ export const projects = [
         image: "/projects/dehoctot/HOME.jpg",
         tags: ["Next.js 14", "PostgreSQL", "Tailwind CSS", "Docker"],
         demoLink: "https://demo.com",
-        githubLink: "https://github.com",
         category: "Education"
     },
     {
@@ -48,7 +47,6 @@ export const projects = [
         image: "/projects/tax-lookup/HOME.jpg",
         tags: ["Next.js 14", "PostgreSQL", "Tailwind CSS", "Docker"],
         demoLink: "https://mobile-mart.vercel.app/",
-        githubLink: "https://github.com",
         category: "Business"
     },
     {
@@ -58,7 +56,6 @@ export const projects = [
         image: "/projects/nganhangdethi/HOME.jpg",
         tags: ["Next.js 14", "Node.js", "PostgreSQL"],
         demoLink: "https://mobile-mart.vercel.app/",
-        githubLink: "https://github.com",
         category: "Education"
     }
 ];

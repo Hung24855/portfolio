@@ -1,14 +1,19 @@
 "use client";
 import Tittle from "@/_core/app/components/Title";
 import { projects } from "@/_core/app/constant/projects";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import { IoLayers } from "react-icons/io5";
+import Modal, { ModalRef } from "@/_core/app/components/Modal";
 
 const Projects = () => {
     const [hoveredId, setHoveredId] = useState<number | null>(null);
+    const modalRef = useRef<ModalRef>(null);
+    const [selectedProject, setSelectedProject] = useState<any>(null);
+
+    const openModal = () => {};
 
     return (
         <div id="projects" className="min-h-screen">
@@ -56,11 +61,8 @@ const Projects = () => {
                                     {project.category}
                                 </div>
 
-                                {/* Title & Description */}
+                                {/* Title*/}
                                 <h3 className="text-xl font-bold text-gray-100 mb-2 drop-shadow-md">{project.title}</h3>
-                                {/* <p className="text-gray-300 text-sm mb-2 line-clamp-2 drop-shadow-md">
-                                    {project.description}
-                                </p> */}
 
                                 {/* Tags */}
                                 <div className="flex flex-wrap gap-2 mb-2">
@@ -84,23 +86,55 @@ const Projects = () => {
                                         <FiExternalLink className="w-4 h-4" />
                                         Demo
                                     </motion.a>
-                                    <motion.a
-                                        href={project.githubLink}
-                                        target="_blank"
+                                    {project.githubLink && (
+                                        <motion.a
+                                            href={project.githubLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1e2a5a] text-white font-medium hover:bg-[#2a3a6a] transition-colors"
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                        >
+                                            <FaGithub className="w-4 h-4" />
+                                            Code
+                                        </motion.a>
+                                    )}
+
+                                    <motion.button
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1e2a5a] text-white font-medium hover:bg-[#2a3a6a] transition-colors"
+                                        className=" px-4 py-2 rounded-lg bg-[#1e2a5a] text-white font-medium hover:bg-[#2a3a6a] transition-colors"
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
+                                        onClick={(e) => {
+                                            setSelectedProject(project);
+                                            modalRef?.current?.open(e);
+                                        }}
                                     >
-                                        <FaGithub className="w-4 h-4" />
-                                        Code
-                                    </motion.a>
+                                        Chi tiết
+                                    </motion.button>
                                 </div>
                             </motion.div>
                         </div>
                     </motion.div>
                 ))}
             </div>
+
+            <Modal
+                ref={modalRef}
+                onClose={() => {
+                    if (modalRef.current) {
+                        modalRef.current.close();
+                    }
+                }}
+                onOk={() => {}}
+                modalContainerClassName="w-1/4"
+            >
+                {selectedProject && (
+                    <>
+                        <div>{selectedProject.description}</div>
+                    </>
+                )}
+            </Modal>
         </div>
     );
 };

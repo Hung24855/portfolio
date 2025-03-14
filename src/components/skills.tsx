@@ -8,7 +8,7 @@ import Tilt from "react-parallax-tilt";
 
 const Skills = () => {
     return (
-        <div id="skills" className="min-h-screen mb-20 responsive-layout">
+        <div id="skills" className="min-h-screen mb-20 responsive-layout overflow-hidden scrollbar-y-none py-5">
             <Tittle title="My skills" />
 
             <div className="space-y-10">
@@ -18,12 +18,12 @@ const Skills = () => {
                             {category.name}
                         </h3>
 
-                        <div className="grid grid-cols-2 tab:grid-cols-3 lap:grid-cols-5 gap-4">
+                        <div className="grid grid-cols-2 tab:grid-cols-3 lap:grid-cols-5 gap-4 ">
                             {category.skills.map((skill, index) => (
-                                <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} key={skill.name}>
+                                <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} key={skill.name}>
                                     <div
                                         className={clsx(
-                                            "relative rounded-xl bg-gradient-to-br from-[#131c4a] to-[#0c0117] overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/40"
+                                            "relative rounded-xl bg-gradient-to-br from-[#131c4a] to-[#0c0117] shadow-xl  transition-all duration-300 overflow-hidden  hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/10"
                                         )}
                                         data-aos="fade-left"
                                         data-aos-delay={100 * index + 1}

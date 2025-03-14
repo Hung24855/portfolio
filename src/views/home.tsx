@@ -11,8 +11,8 @@ const HomeView = () => {
             <Banner />
             <About />
             <Experience />
-            <Skills />
             <Projects />
+            <Skills />
         </Layout>
     );
 };
