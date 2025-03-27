@@ -1,5 +1,6 @@
 import AppButton from "@/_core/app/components/Button";
 import { FaDownload } from "react-icons/fa";
+const CV_PREVIEW = "https://www.topcv.vn/xem-cv/D1cPUQcGWwFQAAYEVgFWVFwEUQZQUwUCUVUHBQ5f8e";
 
 const Banner = () => {
     return (
@@ -24,15 +25,21 @@ const Banner = () => {
                         data-aos="fade-up"
                         data-aos-delay="200"
                     >
-                        Front-end development requires a combination of HTML, CSS, and JavaScript to build user
-                        interfaces. Optimizing performance, ensuring responsiveness, and enhancing user experience are
-                        crucial aspects of the development process.
+                        I specialize in crafting visually appealing and highly responsive web interfaces using modern
+                        technologies like HTML, CSS, and JavaScript. My goal is to enhance user experience by optimizing
+                        performance, ensuring seamless interactivity, and creating intuitive designs that adapt
+                        effortlessly across all devices.
                     </p>
-
-                    <AppButton className="px-10 py-3 flex gap-4 flex-center" data-aos="fade-up" data-aos-delay="300">
-                        <span className="text-lg">Download CV</span>
-                        <FaDownload className="size-5" />
-                    </AppButton>
+                    <a href={CV_PREVIEW} className="inline-block mt-4">
+                        <AppButton
+                            className="px-10 py-3 flex gap-4 flex-center"
+                            data-aos="fade-up"
+                            data-aos-delay="300"
+                        >
+                            <span className="text-lg">Preview CV</span>
+                            <FaDownload className="size-5" />
+                        </AppButton>
+                    </a>
                 </div>
                 <div className=" flex items-end justify-end">
                     <div className="size-[450px] animate-move-up-down rounded-full" data-aos="fade-left">

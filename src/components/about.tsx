@@ -3,7 +3,6 @@ import { aboutMe } from "@/_core/app/constant/aboutMe";
 import { FaPhone } from "react-icons/fa";
 import { MdEmail, MdLocationOn } from "react-icons/md";
 import { IoCalendar } from "react-icons/io5";
-import { FaGraduationCap } from "react-icons/fa6";
 import { FaBookOpen, FaTrophy } from "react-icons/fa";
 
 const About = () => {

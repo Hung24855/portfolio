@@ -1,17 +1,18 @@
 "use client";
 import Tittle from "@/_core/app/components/Title";
-import { projects } from "@/_core/app/constant/projects";
+import { ProjectDetal, projects } from "@/_core/app/constant/projects";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import { IoLayers } from "react-icons/io5";
 import Modal, { ModalRef } from "@/_core/app/components/Modal";
+import ProjectDetail from "@/_core/app/components/ProjectDetail";
 
 const Projects = () => {
     const [hoveredId, setHoveredId] = useState<number | null>(null);
     const modalRef = useRef<ModalRef>(null);
-    const [selectedProject, setSelectedProject] = useState<any>(null);
+    const [selectedProject, setSelectedProject] = useState<ProjectDetal | null>(null);
 
     const openModal = () => {};
 
@@ -37,7 +38,7 @@ const Projects = () => {
                             {/* Project Image */}
                             <div className="relative aspect-video overflow-hidden">
                                 <img
-                                    src={project.image}
+                                    src={project.image[0]}
                                     alt={project.title}
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
@@ -65,13 +66,13 @@ const Projects = () => {
                                 <h3 className="text-xl font-bold text-gray-100 mb-2 drop-shadow-md">{project.title}</h3>
 
                                 {/* Tags */}
-                                <div className="flex flex-wrap gap-2 mb-2">
+                                {/* <div className="flex flex-wrap gap-2 mb-2">
                                     {project.tags.map((tag, index) => (
                                         <span key={index} className="tag">
                                             {tag}
                                         </span>
                                     ))}
-                                </div>
+                                </div> */}
 
                                 {/* Action Buttons */}
                                 <div className="flex gap-3">
@@ -127,13 +128,10 @@ const Projects = () => {
                     }
                 }}
                 onOk={() => {}}
-                modalContainerClassName="w-1/4"
+                modalContainerClassName="w-3/4 h-[95vh]"
+                isShowIconClose={false}
             >
-                {selectedProject && (
-                    <>
-                        <div>{selectedProject.description}</div>
-                    </>
-                )}
+                {selectedProject && <ProjectDetail projectDetail={selectedProject} />}
             </Modal>
         </div>
     );

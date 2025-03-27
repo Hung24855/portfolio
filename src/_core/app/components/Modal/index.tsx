@@ -27,6 +27,7 @@ type ModalProps = {
     loading?: boolean;
     sizeSpin?: "small" | "default" | "large";
     isShowFooter?: boolean;
+    isShowIconClose?: boolean;
     openDuration?: number;
 };
 
@@ -53,7 +54,8 @@ export const Modal = forwardRef<ModalRef, ModalProps>(
             loading = false,
             sizeSpin = "default",
             isShowFooter = false,
-            openDuration = 300
+            openDuration = 300,
+            isShowIconClose = true
         }: ModalProps,
         ref
     ) => {
@@ -128,9 +130,12 @@ export const Modal = forwardRef<ModalRef, ModalProps>(
                     }}
                     onClick={handleModalClick} // Ngăn chặn sự kiện click lan ra ngoài
                 >
-                    <div className="absolute right-1 top-1 rounded-full p-1 hover:bg-gray-200" onClick={onClose}>
-                        <IoClose className="cursor-pointer" size={20} />
-                    </div>
+                    {isShowIconClose && (
+                        <div className="absolute right-1 top-1 rounded-full p-1 hover:bg-gray-200" onClick={onClose}>
+                            <IoClose className="cursor-pointer" size={20} />
+                        </div>
+                    )}
+
                     {textHeader && <div className={clsx("font-semibold", headerModalClassName)}>{textHeader}</div>}
                     {/* Content */}
                     <div>{children}</div>

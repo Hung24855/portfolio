@@ -13,8 +13,8 @@ const Experience = () => {
             id: 1,
             company: "MAPSTUDY",
             position: "Fresher Front End Developer",
-            period: { start: "June 2024", end: "March 2025" },
-            duration: "10 months",
+            period: { start: "January 2024", end: "February 2025" },
+            duration: "14 months",
             responsibilities: [
                 {
                     id: "resp1",
