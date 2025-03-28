@@ -122,7 +122,7 @@ export const projects: ProjectDetal[] = [
             "/projects/dehoctot/3.jpg"
         ],
         tags: ["Next.js 14", "PostgreSQL", "Tailwind CSS", "Docker"],
-        demoLink: "https://demo.com",
+        demoLink: "/",
         category: "Education",
         position: "Fullstack",
         features: {
@@ -142,7 +142,7 @@ export const projects: ProjectDetal[] = [
             "/projects/tax-lookup/4.jpg"
         ],
         tags: ["Next.js 14", "PostgreSQL", "Tailwind CSS", "Docker"],
-        demoLink: "https://mobile-mart.vercel.app/",
+        demoLink: "/",
         category: "Business",
         position: "Fullstack",
         features: {
@@ -162,7 +162,7 @@ export const projects: ProjectDetal[] = [
             "/projects/nganhangdethi/4.jpg"
         ],
         tags: ["Next.js 14", "React query", "Framer-motion"],
-        demoLink: "https://mobile-mart.vercel.app/",
+        demoLink: "https://nganhangdethi.vn/",
         category: "Education",
         position: "Frontend",
         features: {
